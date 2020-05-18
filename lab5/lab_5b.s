@@ -19,7 +19,7 @@
 
 	.equ	tooval,	1
 	.equ	errval,	2
-	.equ	stdout, 0
+	.equ	stdout, 1
 	.equ	stderr, 2
 
 #----------------------------------------------------------------
@@ -122,7 +122,7 @@ _start:
 	MOV	$write_64,%rax	# write function
 	MOV	$stdout,%rdi	# file handle in RDI
 	MOV	$buffer,%rsi	# offset to first character
-	MOV	$b_read,%rdx	# count of characters
+	MOV	b_read,%rdx	# count of characters
 	SYSCALL
 
 #----------------------------------------------------------------
